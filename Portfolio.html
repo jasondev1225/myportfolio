@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason's Personal Webpage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Bright theme */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        section {
+            margin: 20px 0;
+        }
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .portfolio-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+        }
+        .portfolio-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Jason's Webpage</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" style="color: white;">About Me</a></li>
+                <li><a href="#portfolio" style="color: white;">Portfolio</a></li>
+                <li><a href="#contact" style="color: white;">Contact</a></li>
+                <li><a href="#blog" style="color: white;">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Jason, a senior developer with over 9 years of experience in web and app development. I am passionate about creating smart and efficient solutions for complex problems. I love coding and continuously learning new technologies to improve my skills.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item" id="project1">
+                <h3>Project 1</h3>
+                <p>Description of Project 1</p>
+            </div>
+            <div class="portfolio-item" id="project2">
+                <h3>Project 2</h3>
+                <p>Description of Project 2</p>
+            </div>
+            <div class="portfolio-item" id="project3">
+                <h3>Project 3</h3>
+                <p>Description of Project 3</p>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var items = document.querySelectorAll('.portfolio-item');
+                    window.addEventListener('scroll', function() {
+                        var scrollPosition = window.scrollY + window.innerHeight;
+                        items.forEach(function(item) {
+                            if (scrollPosition > item.offsetTop) {
+                                item.classList.add('show');
+                            }
+                        });
+                    });
+                });
+            </script>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you would like to get in touch, feel free to email me at <a href="mailto:jason@example.com">jason@example.com</a>.</p>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Share your thoughts and experiences on your blog. You can write about the latest trends in web and app development, tips, and tutorials.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Jason's Webpage</p>
+    </footer>
+</body>
+</html>
